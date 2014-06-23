@@ -11,28 +11,26 @@ sudo apt-get install -y libsqlite3-dev
 sudo apt-get install -y sqlite3
 
 ## Install rbenv and rbenv-build to manage ruby environment
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+su - vagrant -c "git clone https://github.com/sstephenson/rbenv.git ~/.rbenv"
+su - vagrant -c "echo 'export PATH=\"~/.rbenv/bin:$PATH\"' >> ~/.bash_profile"
+su - vagrant -c "echo 'eval \"\$(rbenv init -)\"' >> ~/.bash_profile"
+su - vagrant -c "git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build"
 
 ## Install Ruby 2.1.0
-rbenv install 2.1.0
-rbenv global 2.1.0
-rbenv rehash
+su - vagrant -c "rbenv install 2.1.0"
+su - vagrant -c "rbenv global 2.1.0"
+su - vagrant -c "rbenv rehash"
 
 ## Install Rails 4.0.5
-gem install rails -v 4.0.5
-rbenv rehash
+su - vagrant -c "gem install rails -v 4.0.5"
+su - vagrant -c "rbenv rehash"
 
 ## Install Spree gem
-gem install spree
-rbenv rehash
+su - vagrant -c "gem install spree"
+su - vagrant -c "rbenv rehash"
 
 ## Setup Spree app
-cd /vagrant
-mkdir -p /vagrant/$SPREE_FOLDER
-rails _4.0.5_ new /vagrant/$SPREE_FOLDER -s
-spree install -A /vagrant/$SPREE_FOLDER
+su - vagrant -c "cd /vagrant"
+su - vagrant -c "mkdir -p /vagrant/$SPREE_FOLDER"
+su - vagrant -c "rails _4.0.5_ new /vagrant/$SPREE_FOLDER -s"
+su - vagrant -c "spree install -A /vagrant/$SPREE_FOLDER"
