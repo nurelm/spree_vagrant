@@ -44,9 +44,9 @@ Now you're logged into the new instance.  From here you'll just `cd` to where yo
 Now just fire up the browser of your choice and take a peek at http://localhost:3001
 
 ## Development
-Back in your host operating system, notice that there is a new directory in the same directory as this README file called "spree".  This is the very same directory that your new vagrant sees, and any edits made from either within the vagrant or from your host operating system will be seen in both places.
+Back in your host operating system, notice that there is a new directory in the same directory as this README file called "spree".  This is the very same directory that your new vagrant sees, and any edits made from either within the vagrant or from your host operating system will be seen in both places. This means you can edit using any tools in your host OS that you please!
 
-This means you can edit using any tools in your host OS that you please!
+It's easy to tinker with exactly what gets installed, just edit the bootstrap.sh file.
 
 ## Further Documentation
 - https://github.com/spree/spree
