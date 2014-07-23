@@ -21,8 +21,8 @@ su - vagrant -c "rbenv install 2.1.0"
 su - vagrant -c "rbenv global 2.1.0"
 su - vagrant -c "rbenv rehash"
 
-## Install Rails 4.0.5
-su - vagrant -c "gem install rails -v 4.0.5"
+## Install Rails 4.1.0
+su - vagrant -c "gem install rails -v 4.1.0"
 su - vagrant -c "rbenv rehash"
 
 ## Install Spree gem
@@ -32,5 +32,5 @@ su - vagrant -c "rbenv rehash"
 ## Setup Spree app
 su - vagrant -c "cd /vagrant"
 su - vagrant -c "mkdir -p /vagrant/$SPREE_FOLDER"
-su - vagrant -c "rails _4.0.5_ new /vagrant/$SPREE_FOLDER -s"
+su - vagrant -c "rails _4.1.0_ new /vagrant/$SPREE_FOLDER -s"
 su - vagrant -c "spree install -A /vagrant/$SPREE_FOLDER"
