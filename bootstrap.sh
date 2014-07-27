@@ -4,6 +4,7 @@
 SPREE_FOLDER=spree
 
 ## Aditional system tools
+sudo apt-get update
 sudo apt-get install -y git
 sudo apt-get install -y nodejs
 sudo apt-get install -y imagemagick
@@ -21,8 +22,8 @@ su - vagrant -c "rbenv install 2.1.0"
 su - vagrant -c "rbenv global 2.1.0"
 su - vagrant -c "rbenv rehash"
 
-## Install Rails 4.1.0
-su - vagrant -c "gem install rails -v 4.1.0"
+## Install Rails 4.1.2
+su - vagrant -c "gem install rails -v 4.1.2"
 su - vagrant -c "rbenv rehash"
 
 ## Install Spree gem
@@ -30,7 +31,8 @@ su - vagrant -c "gem install spree"
 su - vagrant -c "rbenv rehash"
 
 ## Setup Spree app
-su - vagrant -c "cd /vagrant"
+su - vagrant -c "rm -rf /vagrant/spree"
 su - vagrant -c "mkdir -p /vagrant/$SPREE_FOLDER"
-su - vagrant -c "rails _4.1.0_ new /vagrant/$SPREE_FOLDER -s"
+su - vagrant -c "rails _4.1.2_ new /vagrant/$SPREE_FOLDER -s"
 su - vagrant -c "spree install -A /vagrant/$SPREE_FOLDER"
+su - vagrant -c "cd /vagrant/$SPREE_FOLDER; bundle install"
