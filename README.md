@@ -39,7 +39,7 @@ While still in your terminal, inside the same directory you were in while instal
 Now you're logged into the new instance.  From here you'll just `cd` to where your Spree app lives and startup a rails server:
 
     cd /vagrant/spree
-    rails server
+    rails s -b 0.0.0.0
 
 Now just fire up the browser of your choice and take a peek at [http://localhost:3001](http://localhost:3001). The admin URL is [http://localhost:3001/admin/](http://localhost:3001/admin/) and the default user / pass is spree@example.com / spree123.
 
